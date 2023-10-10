@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'System UI', sans-serif;
     font-size: 15px;
+    color: #fff;
+    overflow-y: hidden;
+    user-select: none;
 }
 
 object {
@@ -16,6 +19,13 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
+    background-color: #000;
+}
+
+.contenaire_ {
+    width: 100%;
+    height: 100%;
+
 }
 
 h1 {
@@ -26,7 +36,8 @@ h1 {
 header {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid black;
+    background-color: #000;
+    border-bottom: 1px solid rgb(44, 43, 43);
     width: 100%;
     height: 25px;
     -webkit-app-region: drag;
@@ -54,29 +65,28 @@ header .left p {
     margin-bottom: auto;
 }
 
-header .left p:hover{
+header .left p:hover {
     cursor: pointer;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid #fff;
 }
 
-header .left .translate_90deg span{
+header .left .translate_90deg span {
     transform: rotate(90deg);
 }
 
-header .left .translate_190deg span{
+header .left .translate_190deg span {
     transform: rotate(270deg);
 }
 
-
 .contenaire {
     display: flex;
-    flex: 1;
     flex-direction: column;
+    height: 100%;
 }
 
 .workspace {
-    border-right: 1px solid black;
+    border-right: 1px solid rgb(44, 43, 43);
     height: 100%;
     float: left;
     display: flex;
@@ -86,7 +96,7 @@ header .left .translate_190deg span{
 
 .separator {
     margin: 5px;
-    border: 1px solid white;
+    border: 1px solid transparent;
 }
 
 .workspace object {
@@ -100,4 +110,76 @@ header .left .translate_190deg span{
 
 .workspace .separator:hover {
     border: 1px solid #333;
+}
+
+.file {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.file .count {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.onglet {
+    display: flex;
+    flex-direction: row;
+    float: top;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    color: #fff;
+}
+
+.onglet section {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    height: 30px;
+    text-align: left;
+    align-items: center;
+    border: 1px solid rgb(44, 43, 43);
+}
+
+.onglet section.active {
+    border-bottom: 1px solid #1cc4db;
+    background-color: transparent;
+    background-color: #3f3c3c;
+}
+
+.onglet object {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    fill: #fff;
+}
+
+.count {
+    height: 100%;
+}
+
+.file textarea {
+    color: #fff;
+    border: 1px solid rgb(44, 43, 43);
+    background-color: rgb(44, 43, 43);
+    display: flex;
+    width: 100%;
+    outline: none;
+    height: 100%;
+    resize: none;
+}
+
+.file .text_code {
+    height: 100%;
+    width: 100%;
+}
+
+.textarea cursor {
+    border: 2px solid red;
 }
