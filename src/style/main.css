@@ -1,3 +1,9 @@
+@import url("header.css");
+@import url("scrollbar.css");
+@import url("onglet.css");
+@import url("workspace.css");
+@import url("file.css");
+
 * {
     padding: 0;
     margin: 0;
@@ -5,27 +11,20 @@
     font-family: 'System UI', sans-serif;
     font-size: 15px;
     color: #fff;
-    overflow-y: hidden;
     user-select: none;
-}
-
-object {
-    height: 100%;
 }
 
 body {
     width: 100%;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
     background-color: #000;
+    overflow-y: hidden;
 }
 
 .contenaire_ {
     width: 100%;
     height: 100%;
-
+    overflow-y: hidden;
 }
 
 h1 {
@@ -33,153 +32,8 @@ h1 {
     font-weight: 100;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    background-color: #000;
-    border-bottom: 1px solid rgb(44, 43, 43);
-    width: 100%;
-    height: 25px;
-    -webkit-app-region: drag;
-}
-
-header .left {
-    display: flex;
-    margin-left: auto;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    padding: 2px;
-    -webkit-app-region: no-drag;
-    height: 100%;
-}
-
-header .left p {
-    height: 100%;
-    padding: 5px;
-    border: 1px solid transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    margin-bottom: auto;
-}
-
-header .left p:hover {
-    cursor: pointer;
-    border-radius: 50%;
-    border: 1px solid #fff;
-}
-
-header .left .translate_90deg span {
-    transform: rotate(90deg);
-}
-
-header .left .translate_190deg span {
-    transform: rotate(270deg);
-}
-
 .contenaire {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-.workspace {
-    border-right: 1px solid rgb(44, 43, 43);
-    height: 100%;
-    float: left;
-    display: flex;
-    flex-direction: column;
-    width: 70px;
-}
-
-.separator {
-    margin: 5px;
-    border: 1px solid transparent;
-}
-
-.workspace object {
-    width: 100%;
-    height: 50px;
-    color: black;
-    display: flex;
-    padding: 5px;
-    border: none;
-}
-
-.workspace .separator:hover {
-    border: 1px solid #333;
-}
-
-.file {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-}
-
-.file .count {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #000;
-    margin-left: 5px;
-    margin-right: 5px;
-    text-align: center;
-    align-items: center;
-}
-
-.onglet {
-    display: flex;
-    flex-direction: row;
-    float: top;
-    border-bottom: 1px solid #000;
-    width: 100%;
-    color: #fff;
-}
-
-.onglet section {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-    height: 30px;
-    text-align: left;
-    align-items: center;
-    border: 1px solid rgb(44, 43, 43);
-}
-
-.onglet section.active {
-    border-bottom: 1px solid #1cc4db;
-    background-color: transparent;
-    background-color: #3f3c3c;
-}
-
-.onglet object {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    fill: #fff;
-}
-
-.count {
-    height: 100%;
-}
-
-.file textarea {
-    color: #fff;
-    border: 1px solid rgb(44, 43, 43);
-    background-color: rgb(44, 43, 43);
-    display: flex;
-    width: 100%;
-    outline: none;
-    height: 100%;
-    resize: none;
-}
-
-.file .text_code {
-    height: 100%;
-    width: 100%;
-}
-
-.textarea cursor {
-    border: 2px solid red;
 }

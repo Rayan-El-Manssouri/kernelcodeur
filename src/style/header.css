@@ -1,0 +1,52 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border-bottom: 1px solid rgb(44, 43, 43);
+    width: 100%;
+    height: 25px;
+    -webkit-app-region: drag;
+}
+
+header img{
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+header .left {
+    display: flex;
+    margin-left: auto;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 2px;
+    -webkit-app-region: no-drag;
+    height: 100%;
+}
+
+header .left p {
+    height: 100%;
+    padding: 5px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-bottom: auto;
+}
+
+header .left p:hover {
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+header .left .translate_90deg span {
+    transform: rotate(90deg);
+}
+
+header .left .translate_190deg span {
+    transform: rotate(270deg);
+}
