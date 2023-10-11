@@ -1,13 +1,14 @@
-// Sélectionner les éléments du DOM
-var textarea = document.getElementById("text-input");
-var lineContainer = document.getElementById("line-container");
+var textInput = document.getElementById("text-input");
+var div2 = document.getElementById("div2");
 
-// Ajouter un écouteur d'événement sur le scroll du textarea
-textarea.addEventListener("scroll", function() {
-  // Calculer le ratio de scroll
-  var scrollRatio = textarea.scrollTop / (textarea.scrollHeight - textarea.clientHeight);
-  // Appliquer le même ratio au line-container
-  lineContainer.scrollTop = scrollRatio * (lineContainer.scrollHeight - lineContainer.clientHeight);
+textInput.addEventListener("scroll", function () {
+  div2.scrollTop = textInput.scrollTop;
+  div2.scrollLeft = textInput.scrollLeft;
+});
+
+div2.addEventListener("scroll", function () {
+  textInput.scrollTop = div2.scrollTop;
+  textInput.scrollLeft = div2.scrollLeft;
 });
 
 function countLineBreaks(str) {

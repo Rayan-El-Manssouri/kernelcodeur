@@ -1,8 +1,8 @@
-@import url("header.css");
-@import url("scrollbar.css");
-@import url("onglet.css");
-@import url("workspace.css");
-@import url("file.css");
+@import url("./main_menu/header.css");
+@import url("./main_menu/scrollbar.css");
+@import url("./main_menu/onglet.css");
+@import url("./main_menu/workspace.css");
+@import url("./main_menu/file.css");
 
 * {
     padding: 0;
@@ -21,15 +21,15 @@ body {
     overflow-y: hidden;
 }
 
+h1 {
+    font-size: 15px;
+    font-weight: 100;
+}
+
 .contenaire_ {
     width: 100%;
     height: 100%;
     overflow-y: hidden;
-}
-
-h1 {
-    font-size: 15px;
-    font-weight: 100;
 }
 
 .contenaire {

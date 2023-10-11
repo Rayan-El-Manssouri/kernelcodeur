@@ -1,3 +1,9 @@
+.file {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
 #line-container {
     display: flex;
     float: left;
@@ -6,18 +12,12 @@
     flex-direction: column;
 }
 
-.file {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-}
-
 .file .count {
     border: 1px solid #000;
     width: 40px;
     height: 90vh;
     text-align: center;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .file textarea {
