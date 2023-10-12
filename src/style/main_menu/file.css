@@ -14,10 +14,20 @@
 
 .file .count {
     border: 1px solid #000;
-    width: 40px;
     height: 90vh;
+    display: flex;
     text-align: center;
-    overflow-y: hidden;
+    overflow: hidden;
+}
+
+.file .count span{
+    width: 100%;
+    margin-right: 15px;
+    opacity: 0.5;
+}
+
+.file .count span.selected{
+    opacity: 1;
 }
 
 .file textarea {

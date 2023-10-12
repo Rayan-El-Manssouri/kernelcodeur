@@ -7,7 +7,7 @@ function createWindow() {
         height: 600,
         icon: "./assets/logo.png",
         title: "kernel codeur",
-        frame: false,
+        // frame: false,
         webPreferences: {
             nodeIntegration: false,
             preload: path.join(__dirname, 'preload.js')
