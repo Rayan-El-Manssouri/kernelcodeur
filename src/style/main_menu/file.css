@@ -1,48 +1,58 @@
 .file {
-    display: flex;
+    display: none;
     flex-direction: row;
-    flex: 1;
+    height: 100%;
+    border-bottom: 1px solid rgb(44, 43, 43);
+    color: #fff;
 }
 
-#line-container {
-    display: flex;
-    float: left;
-    height: 100%;
+textarea {
+    background-color: #323131;
+    border: none;
+    outline: none;
+    color: #fff;
     width: 100%;
-    flex-direction: column;
+    height: 99%;
+    text-align: left;
 }
 
 .file .count {
-    border: 1px solid #000;
-    height: 90vh;
-    display: flex;
     text-align: center;
     overflow: hidden;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
-.file .count span{
-    width: 100%;
-    margin-right: 15px;
+.file .count p{
     opacity: 0.5;
 }
 
-.file .count span.selected{
+.file .count p.selected{
     opacity: 1;
 }
 
-.file textarea {
-    height: 90vh;
-    width: 100%;
-    position: relative;
-    outline: none;
-    overflow-y: auto;
-    resize: none;
-    color: #fff;
-    border: 1px solid rgb(44, 43, 43);
-    background-color: rgb(44, 43, 43);
+.file .text_code {
+    display: flex;
+    flex: 1;
 }
 
-.file .text_code {
-    height: 100%;
-    width: 100%;
+.file.activeContenu{
+    display: flex;
+    height: 900px;
+    border-bottom: 1px solid rgb(44, 43, 43);
+}
+
+.file.activeContenu .count {
+    text-align: center;
+    overflow: hidden;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.file.activeContenu .count p{
+    opacity: 0.5;
+}
+
+.file.activeContenu .count p.selected{
+    opacity: 1;
 }

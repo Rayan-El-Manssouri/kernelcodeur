@@ -7,60 +7,91 @@
     <link href="./style/main.css" rel="stylesheet" />
 </head>
 
-<body>
+<body id="body">
     <header>
         <img src="../assets/logo.png" />
-        <h1>Kernel Codeur</h1>
+        <div class="right">
+            <ul>
+                <li>Fichier</li>
+                <li>Edit</li>
+                <li>View</li>
+                <li>Navigate</li>
+                <li>Code</li>
+                <li>Terminal</li>
+                <li>Run</li>
+                <li>Extension</li>
+                <li>Help</li>
+            </ul>
+        </div>
         <div class="left">
             <p class="translate_90deg"> <span>></span></p>
             <p class="translate_190deg"> <span>></span></p>
             <p><span>x</span></p>
         </div>
     </header>
-    <div class="contenaire_">
-        <div class="workspace">
-            <div class="separator">
-                <img src="../assets/logo.png" />
+    <div class="contenaire_principal">
+        <div class="contenaire_">
+            <div class="workspace">
+                <div class="separator">
+                    <img src="../assets/logo.png" />
+                </div>
+                <div class="separator">
+                    <img src="../assets/Git-Icon-White.png" />
+                </div>
             </div>
-        </div>
-        <div class="contenaire">
-            <section class="onglet">
-                <section class="active">
-                    <object data="../assets/logo_file.svg" type="image/svg+xml">
-                        <img src="../assets/logo_file.svg" />
-                    </object>
-                    <h1>Nouveau fichier</h1>
+            <div class="contenaire">
+                <section class="onglet">
+                    <section class="onglets active" data-anim="1">
+                        <object data="../assets/logo_file.svg" type="image/svg+xml">
+                            <img src="../assets/logo_file.svg" />
+                        </object>
+                        <p>Nouveau fichier</p>
+                    </section>
+
+                    <section class="onglets" data-anim="2">
+                        <object data="../assets/logo_file.svg" type="image/svg+xml">
+                            <img src="../assets/logo_file.svg" />
+                        </object>
+                        <p>Nouveau fichier</p>
+                    </section>
                 </section>
 
-                <section>
-                    <object data="../assets/logo_file.svg" type="image/svg+xml">
-                        <img src="../assets/logo_file.svg" />
-                    </object>
-                    <h1>Nouveau fichier</h1>
-                </section>
-
-                <section>
-                    <object data="../assets/logo_file.svg" type="image/svg+xml">
-                        <img src="../assets/logo_file.svg" />
-                    </object>
-                    <h1>Nouveau fichier</h1>
-                </section>
-            </section>
-            <div class="file">
-                <div class="count" id="div2">
-                    <div id="line-container">
-                        <span id="textCode_1">1</span>
+                <div class="file" data-anim="1">
+                    <div class="count" id="div2">
+                        <div id="line-container">
+                            <p id="textCode_1">1</p>
+                        </div>
+                    </div>
+                    <div class="text_code" id="text_code">
+                        <textarea type="text"></textarea>
                     </div>
                 </div>
-                <div class="text_code" id="text_code">
-                    <textarea id="text-input" type="text"></textarea>
+
+                <div class="file" data-anim="2">
+                    <div class="count" id="div3">
+                        <div id="line-container">
+                            <p id="textCode_1">1</p>
+                        </div>
+                    </div>
+                    <div class="text_code" id="text_code">
+                        <textarea type="text"></textarea>
+                    </div>
                 </div>
             </div>
 
-            <script src="./js/main.js"></script>
-
+         
         </div>
+
+        <script src="./js/main.js"></script>
+      
     </div>
+    <footer>
+        <div>
+            <ul>
+                <li>Plain text</li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 

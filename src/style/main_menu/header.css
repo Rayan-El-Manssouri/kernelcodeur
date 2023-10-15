@@ -9,7 +9,34 @@ header {
     -webkit-app-region: drag;
 }
 
-header img{
+header .right {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+header .right ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    -webkit-app-region: no-drag;
+    height: 100%;
+}
+
+header .right ul li:hover {
+    background-color: rgb(89, 87, 87);
+}
+
+header .right ul li {
+    margin-right: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+header img {
     height: 20px;
     margin-left: 5px;
     margin-right: 5px;

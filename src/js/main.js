@@ -1,22 +1,12 @@
-var textInput = document.getElementById("text-input");
-var div2 = document.getElementById("div2");
-let parent = document.getElementById("line-container");
+const textInput = document.getElementById("text-input");
+const div2 = document.getElementById("div2");
+const onglets = document.querySelectorAll('.onglets')
+const files = document.querySelectorAll('.file')
+const file = document.querySelector(".file");
 
-function changeOpacity(id) {
-    id = "textCode_" + id;
-    var lineBalise = document.getElementById(id);
-    var span = document.querySelectorAll('span');
-    // Parcourir la collection de span
-    for (var i = 0; i < span.length; i++) {
-        // Enlever la classe selected de chaque span
-        span[i].classList.remove("selected");
-    }
-    // Vérifier que l'élément lineBalise existe
-    if (lineBalise) {
-        // Ajouter la classe selected à l'élément lineBalise
-        lineBalise.classList.add("selected");
-    }
-}
+let index = 0;
+
+function changeOpacity(id) { var e = document.getElementById("textCode_" + id), t = document.querySelectorAll("p"); for (var n = 0; n < t.length; n++)t[n].classList.remove("selected"); e && e.classList.add("selected") }
 
 function getCursorLine(textarea) {
     var cursorPos = textarea.selectionStart;
@@ -34,7 +24,7 @@ function countLineBreaks(str) {
 }
 
 function createSpan(num) {
-    var span = document.createElement("span");
+    var span = document.createElement("p");
     span.textContent = num;
     span.id = "textCode_" + num;
     return span;
@@ -50,20 +40,26 @@ function updateLineCount() {
         lineContainer.appendChild(span);
     }
 }
+onglets.forEach(onglet => {
+    onglet.addEventListener('click', () => {
+        if (onglet.classList.contains('active')) {
+            return;
+        } else {
+            onglet.classList.add('active')
+        }
+        index = onglet.getAttribute('data-anim')
+        for (i = 0; i < onglets.length; i++) {
+            if (onglets[i].getAttribute('data-anim') != index) {
+                onglets[i].classList.remove('active')
+            }
+        }
 
-textInput.addEventListener("scroll", function () {
-    div2.scrollTop = textInput.scrollTop;
-    div2.scrollLeft = textInput.scrollLeft;
+        for (j = 0; j < files.length; j++) {
+            if (files[j].getAttribute('data-anim') == index) {
+                files[j].classList.add('activeContenu')
+            } else {
+                files[j].classList.remove('activeContenu')
+            }
+        }
+    })
 });
-
-textInput.addEventListener("click", function () {
-    var line = getCursorLine(textInput);
-    changeOpacity(line)
-});
-
-textInput.addEventListener("keyup", function () {
-    var line = getCursorLine(textInput);
-    changeOpacity(line)
-});
-
-document.getElementById("text-input").addEventListener("input", updateLineCount);

@@ -3,6 +3,7 @@
 @import url("./main_menu/onglet.css");
 @import url("./main_menu/workspace.css");
 @import url("./main_menu/file.css");
+@import url("./main_menu/footer.css");
 
 * {
     padding: 0;
@@ -15,25 +16,31 @@
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
+    height: 100dvh;
+    font-family: system-ui;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
     overflow-y: hidden;
+    background-color: black;
 }
 
-h1 {
-    font-size: 15px;
-    font-weight: 100;
+/* Conteneur global */
+.contenaire_principal {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
+/* Conteneur afin de donner la structure principal */
 .contenaire_ {
-    width: 100%;
-    height: 100%;
-    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
 }
 
 .contenaire {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
 }
