@@ -6,7 +6,11 @@ const file = document.querySelector(".file");
 
 let index = 0;
 
-function changeOpacity(id) { var e = document.getElementById("textCode_" + id), t = document.querySelectorAll("p"); for (var n = 0; n < t.length; n++)t[n].classList.remove("selected"); e && e.classList.add("selected") }
+function changeOpacity(id) {
+    var e = document.getElementById("textCode_" + id),
+        t = document.querySelectorAll("p");
+    for (var n = 0; n < t.length; n++)t[n].classList.remove("selected"); e && e.classList.add("selected")
+}
 
 function getCursorLine(textarea) {
     var cursorPos = textarea.selectionStart;
@@ -40,6 +44,7 @@ function updateLineCount() {
         lineContainer.appendChild(span);
     }
 }
+
 onglets.forEach(onglet => {
     onglet.addEventListener('click', () => {
         if (onglet.classList.contains('active')) {
@@ -61,5 +66,11 @@ onglets.forEach(onglet => {
                 files[j].classList.remove('activeContenu')
             }
         }
+
+        textInput.addEventListener("keyup", function () {
+            var line = getCursorLine("#text-input");
+            changeOpacity(line)
+        });
+
     })
 });

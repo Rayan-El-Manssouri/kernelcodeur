@@ -1,9 +1,9 @@
 .file {
     display: none;
     flex-direction: row;
-    height: 100%;
-    border-bottom: 1px solid rgb(44, 43, 43);
+    flex: 1;
     color: #fff;
+    border-bottom: 1px solid rgb(44, 43, 43);
 }
 
 textarea {
@@ -32,15 +32,33 @@ textarea {
     opacity: 1;
 }
 
-.file .text_code {
-    width: min(80%);
-    height: min(50%);
+.file.activeContenu .text_code {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.file.activeContenu .text_code .text_area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 .file.activeContenu{
     display: flex;
-    height: 900px;
-    border-bottom: 1px solid rgb(44, 43, 43);
+    height: 100%;
+    width: 100%;
+}
+
+.file.activeContenu .text_separator {
+    background-color: #323131;
+    border-top: 2px solid #5d5b5b;
+    width: 100%;
+
+    /* Gestion de la ligne séparateur */
+    height: 30%;
 }
 
 .file.activeContenu .count {
