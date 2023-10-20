@@ -18,11 +18,16 @@
 body {
     height: 100dvh;
     font-family: system-ui;
-    font-size: 1rem;
     display: flex;
     flex-direction: column;
     overflow-y: hidden;
-    background-color: black;
+    background-color: #2B2D30;
+}
+
+
+::selection{
+    background-color: #1c6bb5;
+    color: #fff;
 }
 
 /* Conteneur global */

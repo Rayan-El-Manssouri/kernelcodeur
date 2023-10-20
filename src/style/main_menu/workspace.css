@@ -1,5 +1,5 @@
 .workspace {
-    border-right: 1px solid rgb(44, 43, 43);
+    border-right: 2px solid #5d5b5b;
     display: flex;
     flex-direction: column;
     width: 70px;

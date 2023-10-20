@@ -4,10 +4,11 @@
     flex: 1;
     color: #fff;
     border-bottom: 1px solid rgb(44, 43, 43);
+    background-color: #26282E;
 }
 
 textarea {
-    background-color: #323131;
+    background-color: #26282E;
     border: none;
     outline: none;
     color: #fff;
@@ -15,20 +16,29 @@ textarea {
     height: 100%;
     resize: none;
     text-align: left;
+    padding: 1px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
 }
 
 .file .count {
     text-align: center;
     overflow: hidden;
+    overflow-y: auto;
+    height: 752px;
+    border-right: 1px solid #5d5b5b;
+    border-bottom: 2px solid #5d5b5b;
+}
+
+.file .count p {
+    opacity: 0.5;
+    line-height: 25px;
     margin-right: 5px;
     margin-left: 5px;
 }
 
-.file .count p{
-    opacity: 0.5;
-}
-
-.file .count p.selected{
+.file .count p.selected {
     opacity: 1;
 }
 
@@ -46,14 +56,14 @@ textarea {
     width: 100%;
 }
 
-.file.activeContenu{
+.file.activeContenu {
     display: flex;
     height: 100%;
     width: 100%;
 }
 
 .file.activeContenu .text_separator {
-    background-color: #323131;
+    background-color: #26282E;
     border-top: 2px solid #5d5b5b;
     width: 100%;
 
@@ -64,14 +74,27 @@ textarea {
 .file.activeContenu .count {
     text-align: center;
     overflow: hidden;
-    margin-right: 5px;
-    margin-left: 5px;
+    background-color: #26282E;
 }
 
-.file.activeContenu .count p{
+.file.activeContenu .count p {
     opacity: 0.5;
 }
 
-.file.activeContenu .count p.selected{
+.file.activeContenu .count p.selected {
     opacity: 1;
+}
+
+.file_onglets{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.file_onglets .file{
+    display: none;
+}
+
+.file_onglets .file.file.activeContenu{
+    display: flex;
 }

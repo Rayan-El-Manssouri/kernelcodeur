@@ -1,9 +1,18 @@
+:root {
+    --border-bottom: 1px solid rgb(44, 43, 43);
+    --color-bottom-active-hexa: #2a86db;
+    --color-hexa-border: #3f3c3c;
+    --transparent: transparent;
+    --border-global: 2px;
+    --height-object: 20px;
+}
+
 .onglet {
     display: flex;
     flex-direction: row;
     width: 100%;
     color: #fff;
-    border-bottom: 1px solid rgb(44, 43, 43);
+    border-bottom: var(--border-bottom);
 }
 
 .onglet section {
@@ -13,21 +22,22 @@
     height: 30px;
     text-align: left;
     align-items: center;
-    border-left: 1px solid rgb(44, 43, 43);
+    border-bottom: var(--border-global) solid var(--transparent);
+    background-color: var(--transparent);
 }
 
 .onglet section:hover {
-    background-color: rgb(44, 43, 43);
+    border-bottom: var(--border-global) solid var(--color-hexa-border);
+    background-color: var(--color-hexa-border);
 }
 
 .onglet section.active {
-    border-bottom: 1px solid #1cc4db;
-    background-color: transparent;
-    background-color: #3f3c3c;
+    border-bottom: var(--border-global) solid var(--color-bottom-active-hexa);
+    background-color: var(--color-hexa-border);
 }
 
 .onglet object {
-    width: 20px;
-    height: 20px;
+    width: var(--height-object);
+    height: var(--height-object);
     margin-right: 5px;
 }

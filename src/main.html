@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <title>Kernel Codeur</title>
     <link href="./style/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital,wght@0,300;0,500;1,300;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body id="body">
@@ -39,64 +44,18 @@
                     <img src="../assets/Git-Icon-White.png" />
                 </div>
             </div>
-            <div class="contenaire">
-                <section class="onglet">
-                    <section class="onglets active" data-anim="1">
-                        <object data="../assets/logo_file.svg" type="image/svg+xml">
-                            <img src="../assets/logo_file.svg" />
-                        </object>
-                        <p>Nouveau fichier</p>
-                    </section>
-
-                    <section class="onglets" data-anim="2">
-                        <object data="../assets/logo_file.svg" type="image/svg+xml">
-                            <img src="../assets/logo_file.svg" />
-                        </object>
-                        <p>Nouveau fichier</p>
-                    </section>
+            <div class="contenaire" id="contenaire_onglet">
+                <section class="onglet" id="section_onglet">
+                    
                 </section>
+                <div class="file_onglets" id="file_onglets"></div>
 
-                <div class="file activeContenu" data-anim="1">
-                    <div class="count" id="div2">
-                        <div id="line-container">
-                            <p id="textCode_1">1</p>
-                            <p id="textCode_2">2</p>
-                            <p id="textCode_3">3</p>
-                            <p id="textCode_4">4</p>
-                            <p id="textCode_5">5</p>
-                        </div>
-                    </div>
-                    <div class="text_code" id="text_code">
-                        <div class="text_area">
-                            <textarea type="text" id="text-input"></textarea>
-                        </div>
-                        <div class="text_separator" ></div>
-                    </div>
-                </div>
-
-                <div class="file" data-anim="2">
-                    <div class="count" id="div3">
-                        <div id="line-container">
-                            <p id="textCode_1">1</p>
-                            <p id="textCode_2">2</p>
-                            <p id="textCode_3">3</p>
-                            <p id="textCode_4">4</p>
-                            <p id="textCode_5">5</p>
-                        </div>
-                    </div>
-                    <div class="text_code" id="text_code">
-                        <div class="text_area">
-                            <textarea type="text"></textarea>
-                        </div>
-                        <div class="text_separator" ></div>
-                    </div>
-                </div>
             </div>
         </div>
 
         <script src="./js/main.js"></script>
     </div>
-   
+
 
 </body>
 
