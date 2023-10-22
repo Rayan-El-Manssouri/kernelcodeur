@@ -1,0 +1,43 @@
+@import url(./Header.scss);
+@import url(./Contenaire.scss);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(38, 39, 40);
+    color: #fff;
+    font-family: 'Open sans', sans-serif;
+    width: 100%;
+    height: 100dvh;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.top_side_bar {
+    border-top: 2px solid rgb(57, 59, 59);
+    display: flex;
+    flex-direction: row;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+
+    .git_branch {
+
+        &:hover {
+            background-color: rgb(57, 59, 59);
+            cursor: pointer;
+        }
+    }
+
+}
