@@ -3,6 +3,7 @@ import '../styles/index.scss'
 import Header from '../components/Header';
 import Contenaire from '../components/Contenaire';
 import { IconGitBranch } from '@tabler/icons-react';
+
 const Home = () => {
     return (
         <>

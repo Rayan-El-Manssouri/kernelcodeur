@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IconSearch, IconFolder, IconBell, IconBrandGit, IconTerminal2, IconTool, IconSettings, IconPlayerPlayFilled, IconFile } from '@tabler/icons-react';
+
+
+
 const Contenaire = () => {
+    useEffect(() => {
+        var textarea = document.getElementById('textarea');
+        textarea.setSelectionRange(0, textarea.value.length);
+        textarea.focus();
+    });
     return (
         <div className='contenaire'>
             <div className='left_sidebar'>
@@ -62,7 +70,7 @@ const Contenaire = () => {
                         <p>1</p>
                         <p>1</p>
                     </div>
-                    <textarea></textarea>
+                    <textarea id='textarea'></textarea>
                 </div>
             </div>
         </div>
