@@ -3,6 +3,7 @@ header {
     border-bottom: 2px solid rgb(57, 59, 59);
     display: flex;
     align-items: center;
+    --webkit-app-region: drag;
 
     .right {
         margin-left: auto;
@@ -10,6 +11,7 @@ header {
         height: 100%;
         display: flex;
         align-items: center;
+        --webkit-app-region: no-drag;
 
         svg {
             &:hover {
@@ -29,13 +31,13 @@ header {
         display: flex;
         padding: 5px;
         list-style: none;
+        --webkit-app-region: no-drag;
 
         li {
             margin-right: 5px;
             height: 100%;
             padding: 5px;
             border-radius: 5px;
-
             &:hover {
                 background-color: rgb(47, 49, 49);
                 cursor: pointer;
