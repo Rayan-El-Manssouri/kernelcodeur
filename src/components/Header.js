@@ -26,7 +26,6 @@ const Header = () => {
                 <li>
                     Help
                 </li>
-
             </ul>
 
             <div className='right'>

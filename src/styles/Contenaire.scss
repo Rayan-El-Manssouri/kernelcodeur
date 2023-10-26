@@ -57,6 +57,10 @@ $height-textarea: 100%;
                 height: 100%;
                 width: 100%;
 
+                p {
+                    user-select: none;
+                }
+
                 .snip {
                     margin-right: auto;
                 }
@@ -95,10 +99,16 @@ $height-textarea: 100%;
             }
         }
 
+        .section_code {
+            display: flex;
+            flex: 1;
+        }
+
         .text_code {
             display: none;
             flex-direction: row;
             height: 100%;
+            width: 100%;
 
             &.active {
                 display: flex;
@@ -107,17 +117,24 @@ $height-textarea: 100%;
             .count {
                 text-align: center;
                 display: flex;
-                overflow-y: scroll;
-                overflow: hidden;
-                text-align: center;
+                flex-direction: column;
+                align-items: center;
+                overflow-y: auto;
+                overflow-y: hidden;
                 height: 100%;
+                text-align: center;
 
                 p {
+                    margin-right: 5px;
+                    margin-left: 5px;
+                    text-align: center;
                     width: 100%;
                     opacity: 0.5;
                     line-height: 25px;
-                    margin-right: 5px;
-                    margin-left: 5px;
+
+                    &.active {
+                        opacity: 1;
+                    }
                 }
             }
         }
