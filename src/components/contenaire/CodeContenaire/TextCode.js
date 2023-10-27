@@ -6,7 +6,10 @@ const TextCode = (props) => {
     const [lineNumber, setLineNumber] = useState(1);
     const [activeLine, setActiveLine] = useState(1);
     const [valeurTextarea, setValeurTextarea] = useState("");
-    const index = props.TextRef;
+    let index = props.TextRef;
+    if (index == null) {
+        index = 1
+    }
     const IndexMoins = index - 1;
 
     function CursorMove() {
@@ -49,7 +52,7 @@ const TextCode = (props) => {
 
     useEffect(() => {
         CursorMove()
-
+        resize()
     }, [activeLine]);
 
     const myClass = isActive ? ' active' : '';
