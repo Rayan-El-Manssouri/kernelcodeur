@@ -14,7 +14,7 @@ const TextCode = (props) => {
 
     function CursorMove() {
         const borderCursor = document.getElementById(`border-cursor-${index}`);
-        const countElement = document.getElementById(`count-section-bordure-${index}`).querySelector("p.active");
+        const countElement = document.getElementById(`count-active-${IndexMoins}`).querySelector("p.active");
         borderCursor.style.display = "flex";
         borderCursor.style.position = "fixed";
         borderCursor.style.top = countElement.getBoundingClientRect().y + "px";
@@ -22,16 +22,20 @@ const TextCode = (props) => {
     }
 
     function resize() {
-        const countElements = document.getElementById(`count-section-bordure-${index}`);
+        const countElements = document.getElementById(`count-active-${IndexMoins}`);
+        const TextArea = document.getElementById(`text-area-contenaire-${IndexMoins}`);
+        const TextArea_code_ = document.getElementById(`TextArea_code_${index}`);
         const height = window.innerHeight - 103
         countElements.style.height = height + 'px'
+        TextArea.style.height = height + 'px'
+        TextArea_code_.style.height = height + 'px'
     }
 
     window.addEventListener('resize', resize)
 
     const handleTextareaChange = (event) => {
         const textarea = document.getElementById(`text-area-${index}`);
-        const count = document.getElementById(`count-section-bordure-${index}`);
+        const count = document.getElementById(`count-active-${IndexMoins}`);
 
         textarea.addEventListener('scroll', function () {
             CursorMove()
@@ -58,10 +62,10 @@ const TextCode = (props) => {
     const myClass = isActive ? ' active' : '';
 
     return (
-        <div className={'text_code' + myClass} data-anim={index}>
+        <div className={'text_code' + myClass} data-anim={index} id={`TextArea_code_${index}`}>
             <div className='bordure_cursor' id={`border-cursor-${index}`} ></div>
             <div className='count' id={`count-active-${IndexMoins}`}>
-                <div className='count' id={`count-section-bordure-${index}`}>
+                <div className='count-sections'  id={`count-section-bordure-${index}`}>
                     {/* Numération */}
                     {[...Array(lineNumber)].map((_, index) => (
                         <p key={index} id="line-number-contenaire-" className={index + 1 === activeLine ? 'active' : ''}>{index + 1}</p>
