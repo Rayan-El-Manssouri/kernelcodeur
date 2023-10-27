@@ -1,4 +1,4 @@
-  {
+{
   "name": "kernelcodeurreact",
   "version": "0.1.0",
   "private": true,
@@ -16,9 +16,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "npm run start & wait-on tcp:127.0.0.1:3000 && electron .",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "dev": "cross-env BROWSER=none concurrently \"npm start\" \"wait-on tcp:127.0.0.1:3000 && electron .\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,6 +40,8 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
     "wait-on": "^7.0.1"
   }
 }

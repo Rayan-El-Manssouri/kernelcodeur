@@ -7,7 +7,7 @@ const createWindow = () => {
     height: 600,
     frame: false
   })
-
+  mainWindow.maximize()
   mainWindow.loadURL('http://localhost:3000')
 }
 
