@@ -75,6 +75,7 @@ const TextCode = (props) => {
                     onClick={handleTextareaChangeValue}
                     value={valeurTextarea}
                     id={`text-area-${index}`}
+                    autoFocus
                 >
                 </textarea>
             </div>
