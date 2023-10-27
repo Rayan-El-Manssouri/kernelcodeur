@@ -1,0 +1,17 @@
+$color-scrollbar: rgb(38, 39, 40);
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    z-index: 10000000;
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: $color-scrollbar;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(57, 59, 59);
+    border-radius: 20px;
+    border: 3px solid $color-scrollbar;
+}

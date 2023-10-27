@@ -24,6 +24,7 @@ const Section = ({ className, RefOnglet }) => {
 
             sectionActive.forEach((sa) => {
                 sa.classList.add('active');
+                document.getElementById('')
             });
 
             elements.forEach((el) => {

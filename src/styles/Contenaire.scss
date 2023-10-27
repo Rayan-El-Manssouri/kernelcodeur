@@ -48,8 +48,10 @@ $height-textarea: 100%;
             flex-direction: row;
             align-items: center;
             height: 35px;
+            background-color: rgb(38, 38, 39);
             width: 100%;
             border-bottom: 1px solid rgb(57, 59, 59);
+            z-index: 3;
 
             .contenaire {
                 display: flex;
@@ -106,7 +108,6 @@ $height-textarea: 100%;
 
         .text_code {
             display: none;
-            flex-direction: row;
             height: 100%;
             width: 100%;
 
@@ -119,8 +120,10 @@ $height-textarea: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                overflow-y: auto;
+                overflow-y: scroll;
                 overflow-y: hidden;
+                overflow-x: hidden;
+                user-select: none;
                 height: 100%;
                 text-align: center;
 
@@ -139,24 +142,4 @@ $height-textarea: 100%;
             }
         }
     }
-}
-
-textarea {
-    color: #fff;
-    background-color: #333;
-    outline: none;
-    border: 1px solid rgb(57, 59, 59);
-    resize: none;
-    overflow-y: auto;
-    border-left: 1px solid rgb(57, 59, 59);
-    width: 100%;
-    height: $height-textarea;
-    line-height: 25px;
-    font-size: 16px;
-    z-index: 1000;
-}
-
-.textarea {
-    display: flex;
-    width: 100%;
 }

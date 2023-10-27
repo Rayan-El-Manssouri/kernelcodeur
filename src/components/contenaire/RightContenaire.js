@@ -8,8 +8,8 @@ const RightContenaire = () => {
         <div className='right_contenaire'>
             <div className='onglet'>
                 <div className='contenaire'>
-                    <Section RefOnglet="1" />
-                    <Section className="active" RefOnglet="2" />
+                    <Section className="active" RefOnglet="1" />
+                    <Section RefOnglet="2" />
                     <Section RefOnglet="3" />
                 </div>
                 <div className='snip'>
@@ -17,12 +17,11 @@ const RightContenaire = () => {
                 </div>
             </div>
             <div className='section_code'>
-                <TextCodeSection TextRef="1" />
+                <TextCodeSection TextRef="1" className="active" />
                 <TextCodeSection TextRef="2" />
                 <TextCodeSection TextRef="3" />
             </div>
 
-            <div className='bordure_cursor' />
         </div>
     );
 };

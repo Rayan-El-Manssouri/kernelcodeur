@@ -1,0 +1,20 @@
+$height-textarea: 100%;
+
+textarea {
+    color: #fff;
+    background-color: #333;
+    outline: none;
+    border: 1px solid rgb(57, 59, 59);
+    resize: none;
+    overflow-y: auto;
+    border-left: 1px solid rgb(57, 59, 59);
+    width: 100%;
+    height: $height-textarea;
+    line-height: 25px;
+    font-size: 16px;
+}
+
+.textarea {
+    display: flex;
+    width: 100%;
+}

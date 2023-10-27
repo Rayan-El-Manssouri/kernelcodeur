@@ -3,17 +3,19 @@ header {
     border-bottom: 2px solid rgb(57, 59, 59);
     display: flex;
     align-items: center;
-    --webkit-app-region: drag;
-
+    -webkit-app-region: drag;
+    user-select: none;
+    z-index: 3;
     .right {
         margin-left: auto;
         margin-right: 5px;
         height: 100%;
         display: flex;
         align-items: center;
-        --webkit-app-region: no-drag;
 
         svg {
+            -webkit-app-region: no-drag;
+
             &:hover {
                 background-color: rgb(44, 45, 45);
                 border-radius: 5px;
@@ -38,6 +40,8 @@ header {
             height: 100%;
             padding: 5px;
             border-radius: 5px;
+            -webkit-app-region: no-drag;
+
             &:hover {
                 background-color: rgb(47, 49, 49);
                 cursor: pointer;

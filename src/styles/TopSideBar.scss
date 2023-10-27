@@ -1,0 +1,24 @@
+$BackgroundColor: rgb(38, 39, 40);
+
+.top_side_bar {
+    border-top: 2px solid rgb(57, 59, 59);
+    display: flex;
+    flex-direction: row;
+    -webkit-app-region: no-drag;
+    z-index: 3;
+    background-color: $BackgroundColor;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+
+    .git_branch {
+
+        &:hover {
+            background-color: rgb(57, 59, 59);
+            cursor: pointer;
+        }
+    }
+
+}
