@@ -2,6 +2,7 @@ const { app, BrowserWindow } = require('electron')
 
 const createLoadingWindow = () => {
   const loadingWindow = new BrowserWindow({
+    icon: "./public/assets/logo.png",
     width: 400,
     height: 400,
     frame: false,

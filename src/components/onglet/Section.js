@@ -1,13 +1,16 @@
-import { IconFile } from '@tabler/icons-react';
+import { IconFile, IconX } from '@tabler/icons-react';
 import React, { useState } from 'react';
 
-const Section = ({ className, RefOnglet }) => {
+const Section = ({ className, RefOnglet, title }) => {
     const [isActive] = useState(className === "active");
 
     const handleClick = () => {
         const activeElement = document.querySelector(`.onglet .contenaire section[data-anim="${RefOnglet}"]`);
         const IndexMoins = RefOnglet - 1;
         const countElements = document.getElementById(`count-active-${IndexMoins}`);
+        if (countElements == null) {
+            return;
+        }
         const height = window.innerHeight - 103
         countElements.style.height = height + 'px'
 
@@ -24,7 +27,6 @@ const Section = ({ className, RefOnglet }) => {
 
             sectionActive.forEach((sa) => {
                 sa.classList.add('active');
-                document.getElementById('')
             });
 
             elements.forEach((el) => {
@@ -35,12 +37,34 @@ const Section = ({ className, RefOnglet }) => {
         }
     };
 
+    const handleClickX = () => {
+        const sectionClicked = document.querySelector(`.onglet .contenaire section[data-anim="${RefOnglet}"]`);
+        const sectionActive = document.querySelectorAll(`.section_code .text_code[data-anim="${RefOnglet}"]`);
+
+        if (sectionClicked && sectionClicked.classList.contains('active')) {
+            sectionClicked.style.display = "none";
+        }
+
+        sectionActive.forEach((sa) => {
+            if (sa.classList.contains('active')) {
+                sa.style.display = "none";
+            }
+        });
+
+        const nextSection = sectionClicked.nextElementSibling || sectionClicked.previousElementSibling;
+
+        if (nextSection) {
+            nextSection.click();
+        }
+    };
+
     const myClass = isActive ? 'active' : '';
 
     return (
         <section className={myClass} onClick={handleClick} data-anim={RefOnglet}>
             <IconFile />
-            <p>Nouveau fichier</p>
+            <p>{title}</p>
+            <IconX onClick={handleClickX} className='FermetureOngletX' />
         </section>
     );
 };

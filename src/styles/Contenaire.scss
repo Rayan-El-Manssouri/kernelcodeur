@@ -15,6 +15,36 @@ $height-textarea: 100%;
         align-items: center;
         border-right: 2px solid rgb(57, 59, 59);
 
+        .title {
+            position: absolute;
+            left: 50px;
+            user-select: none;
+            pointer-events: none;
+            z-index: 999999;
+            background-color: rgb(43, 46, 48);
+            padding: 5px;
+            border: 2px solid rgb(57, 59, 59);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 38%;
+                left: -14px;
+                width: 12px;
+                height: 12px;
+                background-color: rgb(43, 46, 48);
+                border-left: 2px solid rgb(57, 59, 59);
+                border-bottom: 2px solid rgb(57, 59, 59);
+                transform: rotate(45deg) translateY(-50%);
+                border-radius: 2px;
+            }
+        }
+
         .bottom {
             border-top: 2px solid rgb(57, 59, 59);
             margin-top: auto;
@@ -26,7 +56,7 @@ $height-textarea: 100%;
             height: 40px;
             padding: 5px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
 
@@ -34,6 +64,14 @@ $height-textarea: 100%;
                 background-color: rgb(44, 45, 45);
                 border-radius: 5px;
                 cursor: pointer;
+
+                .title {
+                    transition: all 0.3s ease;
+                    z-index: 999999;
+                    transform: translateY(-15%) translateX(10px);
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
         }
     }
@@ -43,7 +81,78 @@ $height-textarea: 100%;
         flex-direction: column;
         flex: 1;
 
+        .InfoBulleZero {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+
+            .actions {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex: 1;
+
+                .click {
+                    display: flex;
+                    flex-direction: column;
+                    width: auto;
+                    margin-bottom: 6.6%;
+                    margin-right: 5px;
+                }
+
+                .recents {
+                    display: flex;
+                    flex-direction: column;
+
+                    .recent-element {
+                        background-color: rgb(43, 46, 48);
+                        width: 400px;
+                        height: 200px;
+                        border: 2px solid #32363C;
+                    }
+                }
+
+                .help {
+                    margin-left: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    hr {
+                        width: 100%;
+                        margin-bottom: 5px;
+                    }
+
+                    a {
+                        color: #0fb2f2;
+                        text-decoration: none;
+                        border-bottom: 1px solid #2a86db;
+                        width: auto;
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            button {
+                background-color: rgb(43, 46, 48);
+                margin-top: 5px;
+                color: #fff;
+                border: 2px solid #32363C;
+                padding: 5px;
+                margin-right: 5px;
+                width: 100%;
+
+                &:hover {
+                    border: 2px solid #0fb2f2;
+                }
+            }
+        }
+
         .onglet {
+            z-index: 1;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -76,9 +185,24 @@ $height-textarea: 100%;
                 border-bottom: 2px solid transparent;
                 width: auto;
 
+                .FermetureOngletX {
+                    display: none;
+                }
+
                 &.active {
                     background-color: rgb(57, 59, 59);
                     border-bottom: 2px solid #2a86db;
+                    z-index: 4;
+
+                    .FermetureOngletX {
+                        display: flex;
+                        border: 1px solid transparent;
+
+                        &:hover {
+                            border: 1px solid #2a86db;
+                            border-radius: 5px;
+                        }
+                    }
 
                     &:hover {
                         background-color: rgb(57, 59, 59);
@@ -110,6 +234,7 @@ $height-textarea: 100%;
             display: none;
             height: 100%;
             width: 100%;
+            z-index: 2;
 
             &.active {
                 display: flex;
@@ -131,7 +256,8 @@ $height-textarea: 100%;
                     margin-left: 5px;
                     margin-right: 5px;
                     text-align: center;
-                    p { 
+
+                    p {
                         width: 100%;
                         opacity: 0.5;
                         line-height: 25px;
