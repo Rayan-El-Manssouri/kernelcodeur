@@ -1,4 +1,9 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const path = require('path');
+const fs = require('fs');
+
+let selectedFolder;
+let mainWindow; 
 
 const createLoadingWindow = () => {
   const loadingWindow = new BrowserWindow({
@@ -8,7 +13,7 @@ const createLoadingWindow = () => {
     frame: false,
     alwaysOnTop: true,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: false
     }
   })
   loadingWindow.loadFile('./loader/loading.html')
@@ -20,11 +25,13 @@ const createMainWindow = () => {
     icon: "./public/assets/logo.png",
     width: 800,
     height: 600,
-    frame: false,
+    // frame: false,
     show: false,
-    backgroundColor: "rgb(38, 39, 40)",
+    backgroundColor: "rgb(38, 39, 40",
     webPreferences: {
-      nodeIntegration: true
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true,
+      contextIsolation: true
     }
   })
   mainWindow.maximize()
@@ -40,7 +47,7 @@ let loadingWindow
 app.whenReady().then(() => {
   loadingWindow = createLoadingWindow()
   createMainWindow()
-  
+
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       loadingWindow = createLoadingWindow()
@@ -52,3 +59,29 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
+
+ipcMain.handle('open-folder', async (event) => {
+  const result = await dialog.showOpenDialog({
+    properties: ['openDirectory']
+  });
+
+  if (!result.canceled && result.filePaths.length > 0) {
+    selectedFolder = result.filePaths[0];
+    return selectedFolder;
+  }
+});
+
+ipcMain.handle('open-file-directory', async (event, fileName) => {
+  try {
+    if (selectedFolder) {
+      const filePath = path.join(selectedFolder, fileName);
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      return fileContent;
+    } else {
+      return null; // Ou une erreur spécifique si selectedFolder n'est pas défini
+    }
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+});

@@ -6,6 +6,7 @@
   "dependencies": {
     "@tabler/icons-react": "^2.39.0",
     "electron": "^27.0.2",
+    "fs": "^0.0.1-security",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",

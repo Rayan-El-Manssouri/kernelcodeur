@@ -1,3 +1,8 @@
+@mixin effet-hover {
+    background-color: rgb(44, 45, 45);
+    border-radius: 5px;
+}
+
 header {
     background-color: rgb(38, 39, 40);
     border-bottom: 2px solid rgb(57, 59, 59);
@@ -6,6 +11,13 @@ header {
     -webkit-app-region: drag;
     user-select: none;
     z-index: 3;
+
+    img {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+    }
+
     .right {
         margin-left: auto;
         margin-right: 5px;
@@ -17,16 +29,9 @@ header {
             -webkit-app-region: no-drag;
 
             &:hover {
-                background-color: rgb(44, 45, 45);
-                border-radius: 5px;
+                @include effet-hover()
             }
         }
-    }
-
-    img {
-        width: 30px;
-        height: 30px;
-        margin: 5px;
     }
 
     ul {
@@ -39,12 +44,11 @@ header {
             margin-right: 5px;
             height: 100%;
             padding: 5px;
-            border-radius: 5px;
             -webkit-app-region: no-drag;
+            cursor: pointer;
 
             &:hover {
-                background-color: rgb(47, 49, 49);
-                cursor: pointer;
+                @include effet-hover()
             }
         }
     }

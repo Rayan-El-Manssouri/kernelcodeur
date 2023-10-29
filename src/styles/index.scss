@@ -1,9 +1,10 @@
-@import url(./Header.scss);
-@import url(./Contenaire.scss);
-@import url(./Scrollbar.scss);
-@import url(./Textarea.scss);
-@import url(./TopSideBar.scss);
-@import url(./BorderCursor.scss);
+@import url(./components/Header/Header.scss);
+@import url(./Contenaire/Contenaire.scss);
+@import url(./components/Scrollbar/Scrollbar.scss);
+@import url(./components/TextArea/Textarea.scss);
+@import url(./components/TopSideBar/TopSideBar.scss);
+@import url(./components/cursor/BorderCursor.scss);
+@import url(./components/Button/Button.scss);
 
 $BackgroundColor: rgb(38, 39, 40);
 
@@ -19,6 +20,7 @@ body {
     font-family: 'Open sans', sans-serif;
     width: 100%;
     height: 100dvh;
+    min-height: 100dvh;
 }
 
 #root {
@@ -28,7 +30,7 @@ body {
     flex-direction: column;
 }
 
-::selection{
+::selection {
     background-color: #1c83e3;
     color: #fff;
 }

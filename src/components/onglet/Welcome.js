@@ -3,7 +3,6 @@ import React from 'react';
 const Welcome = () => {
     return (
         <div className="InfoBulleZero" id='TextArea_code_1' data-anim="1">
-            {/* Donner une ide count-active -1 du l'id parent pour la détections de zone . */}
             <div className='actions' id='count-active-0'>
                 <div className='click'>
                     <span>Faites une actions</span>
