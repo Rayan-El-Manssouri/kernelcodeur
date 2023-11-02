@@ -1,7 +1,28 @@
 const { contextBridge, ipcRenderer } = require('electron');
 const fs = require('fs');
-
-contextBridge.exposeInMainWorld('electronAPI', {
+const electronAPI = {
+    updateFileList: async (result) => {
+        try {
+            // Construisez l'URL avec le paramètre "result"
+            const url = `http://localhost:3000/updateFileList?result=${result}`;
+    
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Fetch failed with status ${response.status}`);
+            }
+    
+            const htmlText = await response.text(); // Obtenez le texte de la réponse
+    
+            // Utilisez le DOMParser pour créer un document DOM à partir du texte HTML
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+    
+            // Faites ce que vous voulez avec rootContent
+            console.log(doc);
+        } catch (error) {
+            console.error(error);
+        }
+    },
     handleOpenFolder: async () => {
         try {
             const selectedFolder = await ipcRenderer.invoke('open-folder');
@@ -23,7 +44,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
                 if (event.target.tagName === 'LI') {
                     const fileName = event.target.innerText;
                     const result = await ipcRenderer.invoke('open-file-directory', fileName);
-                    console.log(result);
+                    // Mettez à jour le fileList avec les résultats
+                    electronAPI.updateFileList(result);
                 }
             });
         } catch (error) {
@@ -32,8 +54,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
         }
     },
 
-    handleOpen: async () => {
-        const oneFolder = await ipcRenderer.invoke('open-folder-click');
-        console.log(oneFolder);
-    }
-});
+};
+
+contextBridge.exposeInMainWorld('electronAPI', electronAPI);

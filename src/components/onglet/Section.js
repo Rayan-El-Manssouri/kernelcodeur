@@ -2,7 +2,18 @@ import { IconFile, IconX } from '@tabler/icons-react';
 import React, { useState } from 'react';
 import TextCode from '../contenaire/CodeContenaire/TextCode'
 
-const Section = ({ className, RefOnglet, title, clicked }) => {
+
+/**
+ * Composant de Section onglet.
+ *
+ * @param {object} props - Les propriétés du composant.
+ * @param {string} props.className - La classe CSS de la section (peut être 'active' ou 'inactive').
+ * @param {number} props.RefOnglet - La référence à un onglet.
+ * @param {string} props.title - Le titre de la section.
+ * @param {function} props.clicked - La fonction de gestion du clic (appelée lorsque la section est cliquée).
+ */
+
+const Section = ({ className, RefOnglet, title, clicked, code }) => {
     const [isActive] = useState(className === "active");
 
     const handleClick = () => {
@@ -85,10 +96,11 @@ const Section = ({ className, RefOnglet, title, clicked }) => {
                 </div>
             </div>
             <div className='section_code'>
-                <TextCode TextRef={RefOnglet} value="12346" />
+                <TextCode TextRef={RefOnglet} value={code} />
             </div>
         </section>
     );
 };
+
 
 export default Section;

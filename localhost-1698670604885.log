@@ -1,0 +1,99 @@
+react-dom.development.js:29840 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+VM5625 renderer_init:2 Electron Security Warning (Insecure Content-Security-Policy) This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged.
+warnAboutInsecureCSP @ VM5625 renderer_init:2
+logSecurityWarnings @ VM5625 renderer_init:2
+(anonymous) @ VM5625 renderer_init:2
+load (async)
+securityWarnings @ VM5625 renderer_init:2
+./lib/renderer/common-init.ts @ VM5625 renderer_init:2
+__webpack_require__ @ VM5625 renderer_init:2
+(anonymous) @ VM5625 renderer_init:2
+(anonymous) @ VM5625 renderer_init:2
+___electron_webpack_init__ @ VM5625 renderer_init:2
+(anonymous) @ VM5625 renderer_init:2
+compileForInternalLoader @ VM5478 loaders:335
+compileForPublicLoader @ VM5478 loaders:271
+loadBuiltinModule @ VM5592 helpers:57
+(anonymous) @ VM5595 loader:943
+(anonymous) @ VM5622 asar_bundle:2
+executeUserEntryPoint @ VM5621 run_main:96
+(anonymous) @ VM5575 run_main_module:23
+react-dom.development.js:86 Warning: Invalid DOM property `for`. Did you mean `htmlFor`?
+    at label
+    at div
+    at div
+    at div
+    at div
+    at div
+    at LeftSidebar (http://localhost:3000/static/js/src_pages_Home_js.chunk.js:444:96)
+    at div
+    at Contenaire
+    at Home
+    at RenderedRoute (http://localhost:3000/static/js/bundle.js:38344:5)
+    at Routes (http://localhost:3000/static/js/bundle.js:38966:5)
+    at Suspense
+    at Router (http://localhost:3000/static/js/bundle.js:38904:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:36960:5)
+    at App
+printWarning @ react-dom.development.js:86
+error @ react-dom.development.js:60
+validateProperty$1 @ react-dom.development.js:3749
+warnUnknownProperties @ react-dom.development.js:3803
+validateProperties$2 @ react-dom.development.js:3827
+validatePropertiesInDevelopment @ react-dom.development.js:9541
+setInitialProperties @ react-dom.development.js:9830
+finalizeInitialChildren @ react-dom.development.js:10950
+completeWork @ react-dom.development.js:22193
+completeUnitOfWork @ react-dom.development.js:26596
+performUnitOfWork @ react-dom.development.js:26568
+workLoopConcurrent @ react-dom.development.js:26543
+renderRootConcurrent @ react-dom.development.js:26505
+performConcurrentWorkOnRoot @ react-dom.development.js:25738
+workLoop @ scheduler.development.js:266
+flushWork @ scheduler.development.js:239
+performWorkUntilDeadline @ scheduler.development.js:533
+react-jsx-dev-runtime.development.js:87 Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `TextCode`. See https://reactjs.org/link/warning-keys for more information.
+    at div
+    at TextCode (http://localhost:3000/static/js/src_pages_Home_js.chunk.js:250:76)
+    at div
+    at section
+    at Section (http://localhost:3000/static/js/src_pages_Home_js.chunk.js:989:3)
+    at div
+    at div
+    at RightContenaire (http://localhost:3000/static/js/src_pages_Home_js.chunk.js:859:82)
+    at div
+    at Contenaire
+    at Home
+    at RenderedRoute (http://localhost:3000/static/js/bundle.js:38344:5)
+    at Routes (http://localhost:3000/static/js/bundle.js:38966:5)
+    at Suspense
+    at Router (http://localhost:3000/static/js/bundle.js:38904:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:36960:5)
+    at App
+printWarning @ react-jsx-dev-runtime.development.js:87
+error @ react-jsx-dev-runtime.development.js:61
+validateExplicitKey @ react-jsx-dev-runtime.development.js:1078
+validateChildKeys @ react-jsx-dev-runtime.development.js:1105
+jsxWithValidation @ react-jsx-dev-runtime.development.js:1276
+TextCode @ TextCode.js:73
+renderWithHooks @ react-dom.development.js:16305
+mountIndeterminateComponent @ react-dom.development.js:20074
+beginWork @ react-dom.development.js:21587
+beginWork$1 @ react-dom.development.js:27426
+performUnitOfWork @ react-dom.development.js:26557
+workLoopConcurrent @ react-dom.development.js:26543
+renderRootConcurrent @ react-dom.development.js:26505
+performConcurrentWorkOnRoot @ react-dom.development.js:25738
+workLoop @ scheduler.development.js:266
+flushWork @ scheduler.development.js:239
+performWorkUntilDeadline @ scheduler.development.js:533
+VM5628 C:\Users\Rayan\Desktop\kernelcodeur\preload.js:21 #document<!DOCTYPE html><html lang=​"en">​<head>​<meta charset=​"utf-8">​<link rel=​"icon" href=​"/​assets/​logo.png">​<meta name=​"viewport" content=​"width=device-width, initial-scale=1">​<meta name=​"theme-color" content=​"#000000">​<meta name=​"description" content=​"Web site created using create-react-app">​<link rel=​"apple-touch-icon" href=​"/​logo192.png">​<link rel=​"manifest" href=​"/​manifest.json">​<title>​Kernel Codeur​</title>​<script defer src=​"/​static/​js/​bundle.js">​</script>​</head>​<body>​<noscript>​You need to enable JavaScript to run this app.​</noscript>​<div id=​"root">​</div>​</body>​</html>​
