@@ -1,23 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../styles/index.scss'
 import Header from '../components/Header';
 import Contenaire from '../components/Contenaire';
 import { IconFile, IconGitBranch } from '@tabler/icons-react';
 
 const Home = () => {
-    const [text, setText] = useState("Initial text");
-
-    // Cette fonction mettra à jour le texte lorsque vous le souhaitez
-    const updateText = () => {
-        // Remplacez le texte ci-dessous par le texte que vous souhaitez afficher
-        const newText = "Nouveau texte mis à jour";
-        setText(newText);
-    }
+    const pRef = useRef(null);
 
     useEffect(() => {
-        // Utilisez cette fonction pour mettre à jour le texte à chaque fois que nécessaire
-        updateText();
-    }, []); // Le tableau vide signifie que cela s'exécutera une seule fois après le rendu initial
+        // Observer les changements dans le contenu de la balise p
+        const observer = new MutationObserver((mutationsList) => {
+            for (const mutation of mutationsList) {
+                if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                    const newContent = pRef.current.innerHTML;
+                    console.log("Texte changé : ", newContent);
+                }
+            }
+        });
+
+        observer.observe(pRef.current, { childList: true, characterData: true, subtree: true });
+
+        return () => {
+            // Arrêter d'observer lorsque le composant se démonte
+            observer.disconnect();
+        };
+    }, [pRef]);
 
     return (
         <>
@@ -33,7 +40,7 @@ const Home = () => {
                     <p>Plain text</p>
                 </div>
             </div>
-            <p id="result" style={{ visibility: 'visible' }} dangerouslySetInnerHTML={{ __html: text }}></p>
+            <p id="result" style={{ visibility: 'visible' }} ref={pRef}>Initial text</p>
         </>
     );
 };

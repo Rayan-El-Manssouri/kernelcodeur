@@ -24,7 +24,7 @@ const createMainWindow = () => {
     icon: "./public/assets/logo.png",
     width: 800,
     height: 600,
-    frame: false,
+    // frame: false,
     show: false,
     backgroundColor: "rgb(38, 39, 40)",
     webPreferences: {
