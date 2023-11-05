@@ -44,6 +44,8 @@ const electronAPI = {
                 if (event.target.tagName === 'LI') {
                     const fileName = event.target.innerText;
                     const result = await ipcRenderer.invoke('open-file-directory', fileName);
+                    const result_input = document.getElementById("result")
+                    result_input.innerHTML = result
                     // Mettez à jour le fileList avec les résultats
                     electronAPI.updateFileList(result);
                 }
